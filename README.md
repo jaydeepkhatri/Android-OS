@@ -8,10 +8,9 @@ A cool code.
    
 Main ingredient : **DOM** (no jQuery, no Bootstrap)
 
-Coders & © : JD & KING👑
+> Coders & © : JD & KING👑
 
-> This is a mobile with some basic apps in it, from a bot to video player😁.  
-
+This is a mobile with some basic apps in it, from a bot to video player😁.  
 20+1 apps crafted on a basic theme.💝
 
 Name : Android OS  
