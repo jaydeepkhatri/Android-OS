@@ -190,12 +190,12 @@ img{
 
 /*Browser*/
 .mainhomescr{
-    background-image:url("http://jaydeepkhatri.000webhostapp.com/music/strbkg.jpg");
     background-size:100% 100%;
     background-repeat: no-repeat;
     display:flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to right, #dc2430, #7b4397);
     font-family: 'Roboto', sans-serif;
 }
 .browserap{
