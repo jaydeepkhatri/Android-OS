@@ -816,7 +816,7 @@ function playmusic(){
 
     seekprogress.setAttribute('max', songlen[songnum]);
     
-    audioElement.setAttribute('src', "https://jaydeepkhatri.000webhostapp.com/music/SL/"+song[songnum]);
+    audioElement.setAttribute('src', 'src', "../music/"+song[songnum]);
     audioElement.currentTime = currentz;
     var playPromise = audioElement.play();
     if (playPromise !== undefined) {
