@@ -5,17 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Barlow|Baloo+Bhaijaan|Caveat|Indie+Flower|Monoton|Pattaya|Satisfy|Shadows+Into+Light|Spicy+Rice|VT323" rel="stylesheet">
-<link rel="stylesheet" href="./style/style.css">
+<link href="style/style.css" rel="stylesheet">
 </head>
-<body id="body">
+<body id="body" onload="if(navigator.onLine==true){document.getElementById('mobload').style.display='none';}else{alert('Connect to network')}">
+<!-- try reloading the code, if the loader is slow -->
+<div class="mobileloader" id="mobload"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 <div id="notific" class="notific" align="right"><span id="usericon"></span> <span id="musicnotico"></span> <span id="wifiico"></span> <b><span id="batt"></span> &nbsp; <span id="times"></span></b></div><br/><br/>
 <div class="content" id="content">
-   	<div class="mapp" id="mapp1" onclick="openassistant()" align="center" title="Assistant">
-       	<img src="https://3.bp.blogspot.com/-_vSOM2NjQUs/W4ztNZgzVYI/AAAAAAAAEqk/Am3o5MESpPgXaxpHDLLkFICGRD5CBi4GwCLcBGAs/s320/assi.jpg" width="70" height="70" id="ap1"/><br/>
-       	<span class="apname" align="center" id="aptxt1">Assistant</span>
-   	</div>
-   	<div class="mapp" id="mapp2" onclick="obrowser()" align="center" title="Browser">
-	    <img src="https://2.bp.blogspot.com/--kHORty-sZI/XERw7zeB4jI/AAAAAAAAJuc/2gKNWmTWdDAH1EPn00Z9qDk6370pBmu5wCLcBGAs/s1600/PicsArt_01-20-06.44.21.png" width="70" height="70" id="ap4"  /><br/>
+       <div class="mapp" id="mapp1" onclick="openassistant()" align="center" title="Assistant">
+           <img src="https://3.bp.blogspot.com/-_vSOM2NjQUs/W4ztNZgzVYI/AAAAAAAAEqk/Am3o5MESpPgXaxpHDLLkFICGRD5CBi4GwCLcBGAs/s320/assi.jpg" width="70" height="70" id="ap1"/><br/>
+           <span class="apname" align="center" id="aptxt1">Assistant</span>
+       </div>
+       <div class="mapp" id="mapp2" onclick="obrowser()" align="center" title="Browser">
+        <img src="https://2.bp.blogspot.com/--kHORty-sZI/XERw7zeB4jI/AAAAAAAAJuc/2gKNWmTWdDAH1EPn00Z9qDk6370pBmu5wCLcBGAs/s1600/PicsArt_01-20-06.44.21.png" width="70" height="70" id="ap4"  /><br/>
         <span class="apname" align="center" id="aptxt2">Browser</span> 
     </div>
     <div class="mapp" id="mapp3" onclick="showcalc()" align="center" title="Calculator">
@@ -31,15 +33,15 @@
         <span class="apname" align="center" id="aptxt5">Clock</span>
     </div>
     <div class="mapp" id="mapp6" onclick="odevmode()" align="center" title="Developer Mode">
-		<img src="" width="70" height="70" id="ap6" /><br/>
-		<span class="apname" align="center" id="aptxt6">Developer</span>
+        <img src="https://2.bp.blogspot.com/-X3Do6HiExgU/XIJnn214PVI/AAAAAAAALQs/Z1DeTmDqGH4yJfM6dxONM2jhujnYsvrGQCLcBGAs/s1600/PicsArt_03-08-06.43.31.png" width="70" height="70" id="ap6" /><br/>
+        <span class="apname" align="center" id="aptxt6">Developer</span>
     </div>
     <div class="mapp" id="mapp7" onclick="showdevs()" align="center" title="Devs☺">
         <img src="https://3.bp.blogspot.com/--I8y0L5sInI/W4zsbBqvnYI/AAAAAAAAEqI/1TMS_gPGbF4EqmGZrqnURs8qs99q-ldwQCLcBGAs/s320/dev.jpg" width="70" height="70" id="ap7" /><br/>
         <span class="apname" align="center" id="aptxt7">Devs</span>
     </div>
     <div class="mapp" id="mapp21" align="center" style="display: none" onclick="omeme()" title="Easter Egg">
-        <img src="" width="70" height="70" id="ap21" /><br/>
+        <img src="https://4.bp.blogspot.com/-GTkeEP8yrA0/XIJpguYziFI/AAAAAAAALQ4/anTozHwiZTAx5zx6bev1zw2fyJj0D_tDwCLcBGAs/s1600/PicsArt_03-08-06.51.16.png" width="70" height="70" id="ap21" /><br/>
         <span class="apname" align="center" id="aptxt21">Easter Egg</span>
     </div>
     <div class="mapp" id="mapp8" align="center" onclick="openmaila()" title="E-mail">
@@ -54,13 +56,13 @@
         <img src="https://4.bp.blogspot.com/-K3ERktIEtUc/W3KporvaujI/AAAAAAAAD0A/UjaGfe7wjy8wz3ApFj82Wc0D9KvbnE0WQCLcBGAs/s200/music.jpg" width="70" height="70" id="ap10" /><br/>
         <span class="apname" align="center" id="aptxt10">Music</span>
     </div>
-	<div class="mapp" id="mapp11" onclick="phone()" align="center" title="Phone">
+    <div class="mapp" id="mapp11" onclick="phone()" align="center" title="Phone">
         <img src="https://4.bp.blogspot.com/-GDCDaAXKDmM/W4z7VPIB9sI/AAAAAAAAEq0/rETlH77WjCkiT2LYKUS1A0yXc3syxHq-gCLcBGAs/s200/contact.jpg" width="70" height="70" id="ap11" /><br/>
         <span class="apname" align="center" id="aptxt11">Phone</span>
     </div>
-    <div class="mapp" id="mapp12" onclick="ophotoeditor()" align="center" onclick="" title="Photo Editor">
-    	<img src="https://1.bp.blogspot.com/-ICEkNDT7n38/XG7g1aCPXQI/AAAAAAAAKr0/5c_ytrTO28AD5cNrpCX67s9gT1gQHJqxgCPcBGAYYCw/s1600/PicsArt_02-21-11.12.59.png" width="70" height="70" id="ap12" /><br/>
-    	<span class="apname" align="center" id="aptxt12">Photo Editor</span>
+    <div class="mapp" id="mapp12" onclick="ophotoeditor()" align="center" title="Photo Editor">
+        <img src="https://1.bp.blogspot.com/-ICEkNDT7n38/XG7g1aCPXQI/AAAAAAAAKr0/5c_ytrTO28AD5cNrpCX67s9gT1gQHJqxgCPcBGAYYCw/s1600/PicsArt_02-21-11.12.59.png" width="70" height="70" id="ap12" /><br/>
+        <span class="apname" align="center" id="aptxt12">Photo Editor</span>
     </div>
     <div class="mapp" id="mapp13" onclick="settings()" align="center" title="Settings">
         <img src="https://1.bp.blogspot.com/-kty_OnX3F68/W3Kkn4m6FRI/AAAAAAAADzY/ps3ydaz2mtQqWSNtjR6kzP2Mcl3_fYJwQCLcBGAs/s200/setting.jpg" width="70" height="70" id="ap13" /><br/>
@@ -96,6 +98,9 @@
     </div>
 </div>
 
+
+
+
 <!--APPS-->
 <!--Assistant-->
 <div id="botcontent" class="apbtheme">
@@ -106,7 +111,7 @@
     <div id="banthis" class="banthis">
         <div class="banthisz" align="center">
             <span href="#"><i class="fa fa-ban" style="color:#ff6666"></i> <b>BLOCKED</b> <i class="fa fa-ban" style="color:#ff6666"></i></span><hr style="color:#ddd;" size="4"/>
-            <span style="font-color:#fff;font-size:20px;">Run the Code again 😛</span>
+            <span style="color:#fff;font-size:20px;">Run the Code again 😛</span>
         </div>
     </div>
     <div class="backbtnz">
@@ -195,15 +200,12 @@
 </div>
 
 
-<!--
-Seems like someone is scrolling here;
--->
 
 
 <!--Clock-->
 <div id="clock" class="apbtheme" align="center">
     <div class="mainclock">
-		<br/><br/><br/>
+        <br/><br/><br/>
     <div class="clocktime">
         <span id="clockhour"></span> : <span id="clockminute"></span> <span id="clocksecond" class="clocksecond"></span>
     </div>
@@ -272,66 +274,69 @@ Seems like someone is scrolling here;
 
 <!--Developer Mode-->
 <div class="apbtheme" id="devmode">
-	<br/>
-	<div style="height:calc(100vh - 32px);overflow:scroll;" align="center">
-		<br/>
-		<textarea class="textarearep" id="devappinp" rows="7" placeholder="console.log('Developer Mode -beta');" maxlength="100"></textarea>
-		<button class="cldevbtn" onclick="document.getElementById('userwcdev').style.width = '100%';">User Scripts</button>
-		<button class="cldevbtn" onclick="document.getElementById('helpdev').style.width = '100%';">Help</button> <button onclick="devfunc()" class="cldevbtn"> RUN <i class="fa fa-caret-right fa-fw"></i></button>
-		<br/>&nbsp;
-		<div id="devfunc" class="devfunc" align="left">JavaScript error exceptions:<br/></div>
-	</div>
-	<div class="backbtnz" align="center"><button onclick="cdevmode()" class="closeappbtn">Close &times;</button>
-	</div>
+    <br/>
+    <div style="height:calc(100vh - 32px);overflow:scroll;" align="center">
+        <br/>
+        <textarea class="textarearep" id="devappinp" rows="7" placeholder="console.log('Developer Mode -beta');" maxlength="150"></textarea>
+        <button class="cldevbtn" onclick="document.getElementById('userwcdev').style.width = '100%';">User Scripts</button>
+        <button class="cldevbtn" onclick="document.getElementById('helpdev').style.width = '100%';">Help</button> <button onclick="devfunc()" class="cldevbtn"> RUN <i class="fa fa-caret-right fa-fw"></i></button>
+        <br/>&nbsp;
+        <div id="devfunc" class="devfunc" align="left">JavaScript error exceptions:<br/></div>
+    </div>
+    <div class="backbtnz" align="center"><button onclick="cdevmode()" class="closeappbtn">Close &times;</button>
+    </div>
 </div>
 <div class="apbtheme" id="helpdev">
-	<br/>
-	<div class="userwcdevz">
-		<h2 align="center">Help - Developer Mode</h2>
-		<h3>Example</h3>
-		<ul>
-			<li><code>console.log("Hello World!");</code></li>
-			<li><code>alert('Hey');</code></li>
-			<li><code>5/2<br/><span style="color:#0a0">//Simple Maths Calculations</span></code></li>
-			<li><code>var a = 1<br/>var b = 3;<br/>console.log(a+b);</code></li>
-		</ul>
-		<h3>In Code</h3>
-		<ul>
-			<li><code class="devlcodefun">worldclockshouldwork(hour, minute);<br/><span style="color:#0a0;">//hour & minute in parameter</span></code></li>
-			<li><code class="devlcodefun">themcolo('#abc');<br/> <span style="color:#0a0;">//write color name instead #abc</span></code></li>
-		</ul>
-		<h3>Open Apps</h3>
-		<ul>
-			<li>Assistant - <code class="devlcodefun">openassistant()</code></li>
-			<li>Browser - <code class="devlcodefun">obrowser()</code></li>
-			<li>Calculator - <code class="devlcodefun">showcalc()</code></li>
-			<li>Calendar - <code class="devlcodefun">cal()</code></li>
-			<li>Clock - <code class="devlcodefun">showclock()</code></li>
-			<li>Developer - <code class="devlcodefun">odevmode()</code></li>
-			<li>Devs - <code class="devlcodefun">showdevs()</code></li>
-			<li>E-mail - <code class="devlcodefun">openmaila()</code></li>
-			<li>Maps - <code class="devlcodefun">maps()</code></li>
-			<li>Music - <code class="devlcodefun">musicplayer()</code></li>
-			<li>Phone - <code class="devlcodefun">phone()</code></li>
-			<li>Settings - <code class="devlcodefun">settings()</code></li>
-			<li>Sololearn - <code class="devlcodefun">sololearnf()</code></li>
-			<li>Stopwatch - <code class="devlcodefun">stopwatchz()</code></li>
-			<li>Terminal - <code class="devlcodefun">oterminal()</code></li>
-			<li>Text Editor - <code class="devlcodefun">texteditor()</code></li>
-			<li>Themes - <code class="devlcodefun">themesz()</code></li>
-			<li>Unit Converter - <code class="devlcodefun">unitconverter()</code></li>
-			<li>Videos - <code class="devlcodefun">videos()</code></li>
-		</ul>
-	</div>
+    <br/>
+    <div class="userwcdevz">
+        <h2 align="center">Help - Developer Mode</h2>
+        <h3>Example</h3>
+        <ul class="helpdevul">
+            <li><code>console.log("Hello World!");</code></li>
+            <li><code>alert('Hey');</code></li>
+            <li><code>5/2<br/><span style="color:#0b0">//Simple Maths Calculations</span></code></li>
+            <li><code>var a = 1<br/>var b = 3;<br/>console.log(a+b);</code></li>
+        </ul>
+        <h3>In Code</h3>
+        <ul class="helpdevul">
+            <li><code class="devlcodefun">worldclockshouldwork(hour, minute);<br/><span style="color:#0b0;">//hour & minute in parameter</span></code></li>
+            <li><code class="devlcodefun">seticosize('size')<br/><span style="color:#0b0;">//size = small or medium or large</span></code></li>
+            <li><code class="devlcodefun">themcolo('#abc');<br/> <span style="color:#0b0;">//write color name instead #abc</span></code></li>
+        </ul>
+        <h3>Open Apps</h3>
+        <ul class="helpdevul">
+            <li>Assistant - <code class="devlcodefun">openassistant()</code></li>
+            <li>Browser - <code class="devlcodefun">obrowser()</code></li>
+            <li>Calculator - <code class="devlcodefun">showcalc()</code></li>
+            <li>Calendar - <code class="devlcodefun">cal()</code></li>
+            <li>Clock - <code class="devlcodefun">showclock()</code></li>
+            <li>Developer - <code class="devlcodefun">odevmode()</code></li>
+            <li>Devs - <code class="devlcodefun">showdevs()</code></li>
+            <li>E-mail - <code class="devlcodefun">openmaila()</code></li>
+            <li>Maps - <code class="devlcodefun">maps()</code></li>
+            <li>Music - <code class="devlcodefun">musicplayer()</code></li>
+            <li>Phone - <code class="devlcodefun">phone()</code></li>
+            <li>Settings - <code class="devlcodefun">settings()</code></li>
+            <li>Sololearn - <code class="devlcodefun">sololearnf()</code></li>
+            <li>Stopwatch - <code class="devlcodefun">stopwatchz()</code></li>
+            <li>Terminal - <code class="devlcodefun">oterminal()</code></li>
+            <li>Text Editor - <code class="devlcodefun">texteditor()</code></li>
+            <li>Themes - <code class="devlcodefun">themesz()</code></li>
+            <li>Unit Converter - <code class="devlcodefun">unitconverter()</code></li>
+            <li>Videos - <code class="devlcodefun">videos()</code></li>
+        </ul>
+    </div>
 
-	<div class="backbtnz" align="center"><button onclick="document.getElementById('helpdev').style.width = '0';" class="closeappbtn">Back <i class="fa fa-mail-reply fa-fw"></i></button></div>
+    <div class="backbtnz" align="center"><button onclick="document.getElementById('helpdev').style.width = '0';" class="closeappbtn">Back <i class="fa fa-mail-reply fa-fw"></i></button></div>
 </div>
 <div class="apbtheme" id="userwcdev">
-	<br/>
-	<div class="userwcdevz" id="userwcdevz">
-		<h2 align="center">User Scripts</h2><hr/></div>
-	<div class="backbtnz" align="center"><button onclick="document.getElementById('userwcdev').style.width = '0';" class="closeappbtn">Back <i class="fa fa-mail-reply fa-fw"></i></button></div>
+    <br/>
+    <div class="userwcdevz" id="userwcdevz">
+        <h2 align="center">User Scripts</h2><hr/></div>
+    <div class="backbtnz" align="center"><button onclick="document.getElementById('userwcdev').style.width = '0';" class="closeappbtn">Back <i class="fa fa-mail-reply fa-fw"></i></button></div>
 </div>
+
+
 
 <!--Devs-->
 <div id="devs" class="apbtheme">
@@ -346,8 +351,8 @@ Seems like someone is scrolling here;
             <td><span style="float:left; opacity:0.9;border-radius:4px;padding:4px;" id="setbadge5">Credits</span>
             <br/>
             <ul>
-                <li>SoloLearn Q&amp;A</li>
-                <li>w3schools.com</li>
+                <li>SoloLearn Q&amp;A Discussions</li>
+                <li>W3schools</li>
                 <li>StackOverFlow</li>
             </ul>
             </td>
@@ -358,16 +363,18 @@ Seems like someone is scrolling here;
 </div>
 
 
+
 <!--Easter //Meme-->
 <div class="banthis" style="z-index: 3; background-color:#111;" id="memeap">
     <div style="height:calc(100vh - 32px); overflow:scroll;" align="center">
-        <img id="memewallp" width="80%" height="80%" style="border-radius:0;margin-top:20px;border:2px solid #fff"; /><br/>
+        <img id="memewallp" width="80%" height="80%" style="border-radius:0; margin-top:20px; border:2px solid #fff;"/><br/>
         <button onclick="changememe()" class="cldevbtn">Next</button>
     </div>
     <div class="backbtnz" align="center">
         <button class="closeappbtn" onclick="cmeme()">Close &times;</button>
     </div>
 </div>
+<!-- Memes are taken from Google search (images) result & fb.com/i am programmar, i have no life (group) -->
 
 
 <!--Email-->
@@ -393,6 +400,10 @@ Seems like someone is scrolling here;
         <div class="emailmsg">
             - That was a overwhelming response to the update-1, so we are here with the second update🔥<br/>
             - Thanks to SoloLearn for selecting this code as <a href="https://www.sololearn.com/post/63757/">Code of the Month</a>🙏😍🔥<br/>
+            - supports iOS<br/>
+            - user color in themes (terminal -&gt; connect)<br/>
+            - incognito mode in browser<br/>
+            - email reply<br/>
             - Secret Easter Egg, for MeMes💻<br/>
             - Leave your suggestions in the comment
         <pre align="right">
@@ -400,7 +411,7 @@ Seems like someone is scrolling here;
          </pre>
         </div>
        </div>
-		<button onclick="closeemail()" class="closeemailappbtn" id="closeembtn">Close &times;</button><button onclick="replymail()" class="replyemailbtn" id="repmaibtn">Reply <i class="fa fa-mail-reply"></i></button>
+        <button onclick="closeemail()" class="closeemailappbtn" id="closeembtn">Close &times;</button><button onclick="replymail()" class="replyemailbtn" id="repmaibtn">Reply <i class="fa fa-mail-reply"></i></button>
 </div>
 <div class="apbtheme" id="mailreppal">
     <br/><br/>
@@ -413,9 +424,10 @@ Seems like someone is scrolling here;
 </div>
 
 
+
 <!--Maps-->
 <div class="apbtheme mapmainscr" id="map">
-	<br/>
+    <br/>
     <div class="mapforinp">
         <h2>Maps</h2>
         <form onsubmit="return false;">
@@ -424,7 +436,7 @@ Seems like someone is scrolling here;
         </form>
     </div>
     <div class="mainmap" id="mainmap">
-    	<br/>
+        <br/>
         <iframe id="mappp" width="100%" height="100%"></iframe>
     </div>
     <div class="backbtnz" align="center">
@@ -432,6 +444,8 @@ Seems like someone is scrolling here;
         <button onclick="bmmaps()" class="closeappbtn" id="closemapbtn1" style="display: none">Back <i class="fa fa-mail-reply"></i></button>
     </div>
 </div>
+
+
 
 <!--Music-->
 <div id="musicplayer" class="apbtheme">
@@ -511,78 +525,77 @@ Seems like someone is scrolling here;
 
 
 
+
+
 <div class="apbtheme" id="photoeditor"><br/>
 <div style="height:calc(100vh - 32px); overflow:scroll;">
-	<div class="imgHere"><br/>
-  		<center> <img src="https://picsum.photos/250/250/?random" class="iemimg" id="imagefil" /></center>
-		<div class="container">
-			<p contenteditable="true" id="name">Edit Image name <span id="blink">✎</span></p>
-		</div>
-	</div>
-	<br/><br/>   
-	<div class="styleControl">
-	<div class="iedefslidecontainer" id="ieslidecontainer">
-		Effects:<input type="range" min="0" max="100" id="inputrange" value="0" class="slider" oninput="mainimgedi(this.value)"/>
-	</div>
-	<div class="iedefslidecontainer" id="bRadius">
-		Border Radius:<input type="range" min="0" max="50" oninput="bradius(this.value);" id="baRadius" value="0" class="slider" />
-	</div>
-	<div class="iedefslidecontainer" id="ieborder">
-		Border:<input type="range" min="0" max="15" id="borderplus" value="0" class="slider" oninput="ieeborder(this.value)" />
-	<ul class="ietabs">
-		Border color:
-		<li class="iebortab ier" onclick="peborder = 'F44336';ieeborder(document.getElementById('borderplus').value);">red</li>
-		<li class="iebortab ieg" onclick="peborder = '4CAF50';ieeborder(document.getElementById('borderplus').value);">green</li>
-		<li class="iebortab ieb" onclick="peborder = '0f97f9';ieeborder(document.getElementById('borderplus').value);">blue</li>
-		<li class="iebortab iey" onclick="peborder = 'FF9800';ieeborder(document.getElementById('borderplus').value);">yellow</li>
-	</ul>
-	<ul class="ietabs">
-		Border style:
-		<li class="ieborstab solid" onclick="peborderstyle = 'solid';ieeborder(document.getElementById('borderplus').value);">Solid</li>
-		<li class="ieborstab dot" onclick="peborderstyle = 'dotted';ieeborder(document.getElementById('borderplus').value);">Dooted</li>
-		<li class="ieborstab dash" onclick="peborderstyle = 'dashed';ieeborder(document.getElementById('borderplus').value);">Dashed</li>
-		<li class="ieborstab double" onclick="peborderstyle = 'double';ieeborder(document.getElementById('borderplus').value);">Double</li>
-		<li class="ieborstab inset" onclick="peborderstyle = 'inset';ieeborder(document.getElementById('borderplus').value);">Inset</li>
-	</ul>
-	</div>
-	<div class="iedefslidecontainer" id="ierotate">
-		Rotate:<input type="range" min="0" max="180" id="imgrotate" oninput="ieroate(this.value);" value="0" class="slider" />
-	</div><br/>
-	<select oninput="changefil(this.value)" id="iebtn0" class="iebtns" onclick="ieimeff()">
-		<option selected disabled>Effects</option>
-		<option>Grayscale</option>
-		<option>Sepia</option>
-		<option>Saturate</option>
-		<option>Hue rotate</option>
-		<option>Invert</option>
-		<option>Opacity</option>
-		<option>Brightness</option>
-		<option>Contrast</option>
-		<option>Blur</option>
-	</select>
-	<button class="cldevbtn" id="iebtn1" onclick="borradcli()">Border Radius</button>
-	<button class="cldevbtn" id="iebtn2" onclick="boriecli()">Border</button>
-	<button class="cldevbtn" id="iebtn3" onclick="borroti()">Rotate</button>
+    <div class="imgHere"><br/>
+          <center> <img src="https://picsum.photos/250/250/?random" class="iemimg" id="imagefil" /></center>
+        <div class="container">
+            <p contenteditable="true" id="name">Edit Image name <span id="blink">✎</span></p>
+        </div>
+    </div>
+    <br/><br/>   
+    <div class="styleControl">
+    <div class="iedefslidecontainer" id="ieslidecontainer">
+        Effects:<input type="range" min="0" max="100" id="inputrange" value="0" class="slider" oninput="mainimgedi(this.value)"/>
+    </div>
+    <div class="iedefslidecontainer" id="bRadius">
+        Border Radius:<input type="range" min="0" max="50" oninput="bradius(this.value);" id="baRadius" value="0" class="slider" />
+    </div>
+    <div class="iedefslidecontainer" id="ieborder">
+        Border:<input type="range" min="0" max="15" id="borderplus" value="0" class="slider" oninput="ieeborder(this.value)" />
+    <ul class="ietabs">
+        Border color:
+        <li class="iebortab ier" onclick="peborder = 'F44336';ieeborder(document.getElementById('borderplus').value);">red</li>
+        <li class="iebortab ieg" onclick="peborder = '4CAF50';ieeborder(document.getElementById('borderplus').value);">green</li>
+        <li class="iebortab ieb" onclick="peborder = '0f97f9';ieeborder(document.getElementById('borderplus').value);">blue</li>
+        <li class="iebortab iey" onclick="peborder = 'FF9800';ieeborder(document.getElementById('borderplus').value);">yellow</li>
+    </ul>
+    <ul class="ietabs">
+        Border style:
+        <li class="ieborstab solid" onclick="peborderstyle = 'solid';ieeborder(document.getElementById('borderplus').value);">Solid</li>
+        <li class="ieborstab dot" onclick="peborderstyle = 'dotted';ieeborder(document.getElementById('borderplus').value);">Dooted</li>
+        <li class="ieborstab dash" onclick="peborderstyle = 'dashed';ieeborder(document.getElementById('borderplus').value);">Dashed</li>
+        <li class="ieborstab double" onclick="peborderstyle = 'double';ieeborder(document.getElementById('borderplus').value);">Double</li>
+        <li class="ieborstab inset" onclick="peborderstyle = 'inset';ieeborder(document.getElementById('borderplus').value);">Inset</li>
+    </ul>
+    </div>
+    <div class="iedefslidecontainer" id="ierotate">
+        Rotate:<input type="range" min="0" max="180" id="imgrotate" oninput="ieroate(this.value);" value="0" class="slider" />
+    </div><br/>
+    <select oninput="changefil(this.value)" id="iebtn0" class="iebtns" onclick="ieimeff()">
+        <option selected disabled>Effects</option>
+        <option>Grayscale</option>
+        <option>Sepia</option>
+        <option>Saturate</option>
+        <option>Hue rotate</option>
+        <option>Invert</option>
+        <option>Opacity</option>
+        <option>Brightness</option>
+        <option>Contrast</option>
+        <option>Blur</option>
+    </select>
+    <button class="cldevbtn" id="iebtn1" onclick="borradcli()">Border Radius</button>
+    <button class="cldevbtn" id="iebtn2" onclick="boriecli()">Border</button>
+    <button class="cldevbtn" id="iebtn3" onclick="borroti()">Rotate</button>
     <button class="cldevbtn" id="iebtn4" onclick="iechagim()">Change Image</button>
-	<button class="cldevbtn" id="iebtn5" onclick="reset()">Reset</button><br/><br/>
-	<div class="iewrapper">
-		<div class="iegrid">Grayscale - <span id="iefiltex1"></span></div>
-		<div class="iegrid">Sepia - <span id="iefiltex2"></span></div>
-		<div class="iegrid">Saturate - <span id="iefiltex3"></span></div>
-		<div class="iegrid">Hue Rotate - <span id="iefiltex4"></span></div>
-		<div class="iegrid">Invert - <span id="iefiltex5"></span></div>
-		<div class="iegrid">Opacity - <span id="iefiltex6"></span></div>
-		<div class="iegrid">Brightness - <span id="iefiltex7"></span></div>
-		<div class="iegrid">Contrast - <span id="iefiltex8"></span></div>
-		<div class="iegrid">Blur - <span id="iefiltex9"></span></div>
-	</div><br/><br/>
-	</div>
+    <button class="cldevbtn" id="iebtn5" onclick="reset()">Reset</button><br/><br/>
+    <div class="iewrapper">
+        <div class="iegrid">Grayscale - <span id="iefiltex1"></span></div>
+        <div class="iegrid">Sepia - <span id="iefiltex2"></span></div>
+        <div class="iegrid">Saturate - <span id="iefiltex3"></span></div>
+        <div class="iegrid">Hue Rotate - <span id="iefiltex4"></span></div>
+        <div class="iegrid">Invert - <span id="iefiltex5"></span></div>
+        <div class="iegrid">Opacity - <span id="iefiltex6"></span></div>
+        <div class="iegrid">Brightness - <span id="iefiltex7"></span></div>
+        <div class="iegrid">Contrast - <span id="iefiltex8"></span></div>
+        <div class="iegrid">Blur - <span id="iefiltex9"></span></div>
+    </div><br/><br/>
+    </div>
 </div>
 <div class="backbtnz" align="center"><button class="closeappbtn" onclick="cphotoeditor()">Close &times;</button></div>
 </div>
-
-
-
 
 
 
@@ -616,24 +629,24 @@ Seems like someone is scrolling here;
 
 
 
+
 <!--Stopwatch-->
 <div id="stopwatch" class="apbtheme">
     <br/>
     <div style="font-size:40px; height:calc(100vh - 32px);overflow:scroll;" align="center">
-    	<br/>&nbsp;
+        <br/>&nbsp;
         <span id="stophour">00</span> : <span id="stopminute">00</span> : <span id="stopsecond">00</span> <span style="font-size:20px;" id="stopmsecond">00</span>
         <br/>
         <button class="cldevbtn" id="swstart" onclick="clockinterval = setInterval(countstopwatch, 10); this.disabled=true;">Start</button>
         <button class="cldevbtn" onclick="clearInterval(clockinterval); document.getElementById('swstart').disabled = false;" >Pause</button>
         <button class="cldevbtn" onclick="swlap()">Lap</button>
         <button class="cldevbtn" onclick="resetsw()">Reset</button>
-    	<br/>&nbsp;
+        <br/>&nbsp;
         <table style="border-collapse:collapse; font-size:16px;" border="1" width="90%" align="center" id="tabforlap"></table>
         <br/>
     </div>
     <div class="backbtnz" align="center"><button class="closeappbtn" onclick="closestopwatch()">Close &times;</button></div>
  </div>
-
 
 
 
@@ -678,9 +691,11 @@ Seems like someone is scrolling here;
             <option class="tespicyrice">Spicy Rice</option>
         </select>
         <input type="color" id="tecolpal" onchange="techangecol()" />
+        <button onclick="document.getElementById('texteditorcontent').innerHTML = '';" class="texteditbutton">Clear</button>
         <button onclick="hidetebar()" class="texteditbutton">Hide tab</button> &nbsp;<button class="closeappbtn"  onclick="ctexteditor()">Close &times;</button> &nbsp;
     </div>
 </div>
+
 
 
 <!--Themes-->
@@ -704,11 +719,13 @@ Seems like someone is scrolling here;
     <div class="backbtnz" align="center"><button onclick="cthemes()" class="closeappbtn" id="clbtn">Close &times;</button></div>
 </div>
 
+
+
 <!--Unit Converter-->
 <div class="apbtheme" id="unitconveter">
     <br/>
     <div class="unitccon" align="center">
-    	<br/>
+        <br/>
         <div class="unitconlist" onclick="document.getElementById('uclength').style.width='100%'"><i class="fa fa-arrows-v fa-fw"></i> Length</div>
         <div class="unitconlist" onclick="document.getElementById('ucweight').style.width='100%'"><i class="fa fa-thermometer fa-fw"></i> Temperature</div>
         <div class="unitconlist" onclick="document.getElementById('ucbinary').style.width='100%';"><i class="fa fa-file-code-o fa-fw"></i> ASCII Converter</div>
@@ -716,31 +733,35 @@ Seems like someone is scrolling here;
     <div class="backbtnz" align="center"><button onclick="cunitconverter()" class="closeappbtn" id="clbtn">Close &times;</button></div>
 </div>
 <div class="apbtheme" id="uclength">
-	<div class="unitccon">
-	<br/><br/>
-	<h2 align="center">Length <i class="fa fa-arrows-v fa-fw"></i></h2>
+    <div class="unitccon">
+    <br/><br/>
+    <h2 align="center">Length <i class="fa fa-arrows-v fa-fw"></i></h2>
 Centimeter
-	<input type="number" class="inputmaad" id="inpcentimeter" oninput="uccentimeter(this.value)"/><br/>
-	Meter
-	<input type="number" class="inputmaad" id="inpmeter"  oninput="ucmeter(this.value)" /><br/>
-	Kilometer
-	<input type="number" class="inputmaad" id="inpkilometer" oninput="uckilometer(this.value)" /><br/>
-	Inch
-	<input type="number" class="inputmaad" id="inpinch" oninput="ucinch(this.value)" /><br/>
-	Foot
-	<input type="number" class="inputmaad" id="inpfoot" oninput="ucfoot(this.value)" /><br/>
-	Yard
-	<input type="number" class="inputmaad" id="inpyard" oninput="ucyard(this.value)" /><br/>
-	Mile
-	<input type="number" class="inputmaad" id="inpmile" oninput="ucmile(this.value)" /><br/>&nbsp;
+    <input type="number" class="inputmaad" id="inpcentimeter" oninput="uccentimeter(this.value)"/><br/>
+    Meter
+    <input type="number" class="inputmaad" id="inpmeter"  oninput="ucmeter(this.value)" /><br/>
+    Kilometer
+    <input type="number" class="inputmaad" id="inpkilometer" oninput="uckilometer(this.value)" /><br/>
+    Inch
+    <input type="number" class="inputmaad" id="inpinch" oninput="ucinch(this.value)" /><br/>
+    Foot
+    <input type="number" class="inputmaad" id="inpfoot" oninput="ucfoot(this.value)" /><br/>
+    Yard
+    <input type="number" class="inputmaad" id="inpyard" oninput="ucyard(this.value)" /><br/>
+    Mile
+    <input type="number" class="inputmaad" id="inpmile" oninput="ucmile(this.value)" /><br/>&nbsp;
 </div>
-	<div class="backbtnz" align="center"><button onclick="document.getElementById('uclength').style.width = '0';" class="closeappbtn">Back <i class="fa fa-arrow-left"></i></button></div>
+    <div class="backbtnz" align="center"><button onclick="document.getElementById('uclength').style.width = '0';" class="closeappbtn">Back <i class="fa fa-arrow-left"></i></button></div>
 </div>
+
+
+
+
 <!--Temperature-->
 <div class="apbtheme" id="ucweight">
-	<div class="unitccon">
-	<br/><br/>
-	<h2 align="center">Temperature <i class="fa fa-thermometer fa-fw"></i></h2>
+    <div class="unitccon">
+    <br/><br/>
+    <h2 align="center">Temperature <i class="fa fa-thermometer fa-fw"></i></h2>
 Fahrenheit
 <input type="number" class="inputmaad" id="ufahrenheit" oninput="ucfahrenheit(this.value)" /><br/>
 Celsuis
@@ -752,7 +773,7 @@ Kelvin
 </div>
 <!--Binary Converter -->
 <div class="apbtheme" id="ucbinary">
-	<div class="unitccon">
+    <div class="unitccon">
 <br/><br/>
 <h2 align="center">ASCII Converter <i class="fa fa-file-code-o fa-fw"></i></h2>
 Text
@@ -762,7 +783,6 @@ ASCII
 </div>
 <div class="backbtnz" align="center"><button onclick="document.getElementById('ucbinary').style.width = '0';" class="closeappbtn">Back <i class="fa fa-arrow-left"></i></button></div>
 </div>
-
 
 
 
@@ -789,6 +809,6 @@ ASCII
     <div class="videoitem" id="videoitem13" onclick="playytv(13)">Apna Mahi Ayega</div>
 </div>
 </div>
-	<script src="./script/script.js"></script>
+<script src="script/script.js"></script>
 </body>
 </html>
