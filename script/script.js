@@ -5,13 +5,13 @@ var wifiicon = 0;
 //will not work in Internet Explorer, intentionally
 var devplatform = !!navigator.platform && /iPad|iPhone|iPod|MacIntel|MacPPC|Mac68K/.test(navigator.platform);
 if(devplatform == true){
-	devzplatform = 'ios';
+    devzplatform = 'ios';
 }
 else{
-	devzplatform = 'idkwhatever';
+    devzplatform = 'idkwhatever';
 }
 function androidmobbat(){
-	navigator.getBattery().then(function (battery) {
+    navigator.getBattery().then(function (battery) {
         var  level = battery.level;
         levelz= level*100;
         level = Math.round(levelz);
@@ -35,10 +35,10 @@ function androidmobbat(){
 }
 function bodyonloadingz(){
     if(devzplatform == 'ios'){
-    	baticon.innerHTML = "100% <i class='fa fa-battery-4'></i>";
+        baticon.innerHTML = "100% <i class='fa fa-battery-4'></i>";
     }
     else{
-    	androidmobbat();
+        androidmobbat();
     }
     var time=document.getElementById('times');
     var date = new Date();
@@ -127,7 +127,7 @@ function assistantwork(){
     var ok=["hmm","hmmm","hmmmm","okay","kk","okk","ok","yeah"];
     var about= ["what can you do?", "what do you do", "about"];
     var asopenap = ["open", "openapp", "open app"];
-    var plsong = ["play song", "play a song"];
+    var plsong = ["play song", "play a song", "play music", "play a music"];
     var abuse = ["mc", "bc", "fuck", "fuck you",  "bitch", "shit", "shut up"];
     var clear = ["clear"];
     var jd = ["jd", "jaydeep"];
@@ -269,8 +269,8 @@ function asopenapp(){
                 showclock();
                 break;
             case myapps[5]:
-            	odevmode()
-            	break;
+                odevmode()
+                break;
             case myapps[6]:
                 showdevs();
                 break;
@@ -278,8 +278,8 @@ function asopenapp(){
                 openmaila()
                 break;
             case myapps[8]:
-            	maps()
-            	break;
+                maps()
+                break;
             case myapps[9]:
                 musicplayer();
                 break;
@@ -287,8 +287,8 @@ function asopenapp(){
                 phone()
                 break;
             case myapps[11]:
-            	ophotoeditor();
-            	break;
+                ophotoeditor();
+                break;
             case myapps[12]:
                 settings();
                 break;
@@ -308,8 +308,8 @@ function asopenapp(){
                 themesz();
                 break;
             case myapps[18]:
-            	unitconverter()
-            	break;
+                unitconverter()
+                break;
             case myapps[19]:
                 videos();
                 break;
@@ -396,7 +396,6 @@ function closebot(){
 }
 
 
-//a dangerous/stupid lies benath the code..
 
 
 
@@ -485,7 +484,11 @@ function outputit(){
     }
     else{
         try{
-            document.getElementById('calcoutput').value = eval(calcinput.value);
+            if(calcinput.value == "+-*/"){
+                ravcalc();
+                ccalc();
+            }
+            else{document.getElementById('calcoutput').value = eval(calcinput.value);}
         }
         catch(err){
             calcinput.value = "";
@@ -499,8 +502,6 @@ function ccalc(){
 
 
 
-
-//I repeat, don't scroll;
 
 
 //Calendar
@@ -600,9 +601,9 @@ function showclock(){
     document.getElementById('clock').style.width = "100%";
 }
 function worldclockshouldwork(adahour, adamin){
-	if(adahour <= -13 || adahour >= 13 || adamin < 0 || adamin > 60){
-		return "See the time difference";
-	}
+    if(adahour <= -13 || adahour >= 13 || adamin < 0 || adamin > 60){
+        return "See the time difference";
+    }
     var d = new Date();
     var ofset = d.getTimezoneOffset();
     var timmin = ofset%60;
@@ -649,14 +650,14 @@ function hideclock(){
 
 //Developer Mode
 function odevmode(){
-	document.getElementById('devmode').style.width = "100%";
+    document.getElementById('devmode').style.width = "100%";
 }
 function devfunc(){
     var jsstr = document.getElementById('devappinp').value;
     if(jsstr.length == 0)
-     	document.getElementById('devfunc').innerHTML += "- need some JavaScript input<br/>";
+         document.getElementById('devfunc').innerHTML += "- need some javascript input<br/>";
     else
-       	document.getElementById('userwcdevz').innerHTML += jsstr+"<hr/>";
+           document.getElementById('userwcdevz').innerHTML += jsstr+"<hr/>";
     var notallowedjs = ["notallowedjs","assistantwork", "clearinterval", "replybotmessage", "write", "devfunc", "tconnect", "abxxsasswsasa", "mapp21", "memeap"];
     var notoffen = true;
     for(i=0; i<notallowedjs.length;i++){
@@ -671,7 +672,7 @@ function devfunc(){
             document.getElementById('devappinp').value = "";
             var abxxsasswsasa = eval(jsstr);
             if((typeof abxxsasswsasa) == 'number'){
-            	console.log(abxxsasswsasa);
+                console.log(abxxsasswsasa);
             }
         }
         catch(err){
@@ -680,7 +681,7 @@ function devfunc(){
     }
 }
 function cdevmode(){
-	document.getElementById('devmode').style.width = "0";
+    document.getElementById('devmode').style.width = "0";
 }
 
 
@@ -762,10 +763,6 @@ function cmaps(){
 }
 
 
-/*
-Caught you, Danger Ahead💀
-*/
-
 
 //Music Player
 function musicplayer(){
@@ -819,7 +816,7 @@ function playmusic(){
 
     seekprogress.setAttribute('max', songlen[songnum]);
     
-    audioElement.setAttribute('src', "https://jaydeepkhatri.000webhostapp.com/music/SL/"+song[songnum]);
+    audioElement.setAttribute('src', 'src', "../music/"+song[songnum]);
     audioElement.currentTime = currentz;
     var playPromise = audioElement.play();
     if (playPromise !== undefined) {
@@ -954,18 +951,12 @@ function closephone(){
 
 
 
-/*
-warning, warning, warning, warning!!!!!!!!
-some people already had a serious attack while moving benath the code
-
-so simply, don't scroll ⚡
-*/
 
 
 
 //Photo Editor
 function ophotoeditor(){
-	document.getElementById('photoeditor').style.width = "100%";
+    document.getElementById('photoeditor').style.width = "100%";
 }
 var ieinprange = document.getElementById('inputrange');
 var iemainimg = document.getElementById('imagefil').style;
@@ -974,163 +965,163 @@ var ieimgb = document.getElementById('ieborder').style;
 var ieimgsld = document.getElementById('ieslidecontainer').style;
 var ieimgrot = document.getElementById('ierotate').style;
 function ieimeff(){
-	ieimgsld.display = "block";
-	ieimgbr.display = "none";
-	ieimgb.display = "none";
-	ieimgrot.display = "none";
+    ieimgsld.display = "block";
+    ieimgbr.display = "none";
+    ieimgb.display = "none";
+    ieimgrot.display = "none";
 }
 var ieimgval = ["0", "0", "100", "0", "0", "100", "100", "100", "0"];
 var iedefval = ["0", "0", "100", "0", "0", "100", "100", "100", "0"];
 function mainimgedi(value){
-	switch (iefilter){
-	case 0:
-		ieimgval[0] = value;
-		document.getElementById('iefiltex1').innerHTML = ieimgval[0];
-	break;
-	case 1:
-		ieimgval[1] = value;
-		document.getElementById('iefiltex2').innerHTML = ieimgval[1];
-	break;
-	case 2:
-		ieimgval[2] = value;
-		document.getElementById('iefiltex3').innerHTML = ieimgval[2];
-	break;
-	case 3:
-		ieimgval[3] = value;
-		document.getElementById('iefiltex4').innerHTML = ieimgval[3];
-	break;
-	case 4:
-		ieimgval[4] = value;
-		document.getElementById('iefiltex5').innerHTML = ieimgval[4];
-	break;
-	case 5:
-		ieimgval[5] = value;
-		document.getElementById('iefiltex6').innerHTML = ieimgval[5];
-	break;
-	case 6:
-		ieimgval[6] = value;
-		document.getElementById('iefiltex7').innerHTML = ieimgval[6];
-	break;
-	case 7:
-		ieimgval[7] = value;
-		document.getElementById('iefiltex8').innerHTML = ieimgval[7];
-	break;
-	case 8:
-		ieimgval[8] = value;
-		document.getElementById('iefiltex9').innerHTML = ieimgval[8];
-	break;
-	}
-	iemainimg.filter = "grayscale("+ieimgval[0]+"%) sepia("+ieimgval[1]+"%) saturate("+ieimgval[2]+"%) hue-rotate("+ieimgval[3]+"deg) invert("+ieimgval[4]+"%) opacity("+ieimgval[5]+"%) brightness("+ieimgval[6]+"%) contrast("+ieimgval[7]+"%) blur("+ieimgval[8]+"px)";
+    switch (iefilter){
+    case 0:
+        ieimgval[0] = value;
+        document.getElementById('iefiltex1').innerHTML = ieimgval[0];
+    break;
+    case 1:
+        ieimgval[1] = value;
+        document.getElementById('iefiltex2').innerHTML = ieimgval[1];
+    break;
+    case 2:
+        ieimgval[2] = value;
+        document.getElementById('iefiltex3').innerHTML = ieimgval[2];
+    break;
+    case 3:
+        ieimgval[3] = value;
+        document.getElementById('iefiltex4').innerHTML = ieimgval[3];
+    break;
+    case 4:
+        ieimgval[4] = value;
+        document.getElementById('iefiltex5').innerHTML = ieimgval[4];
+    break;
+    case 5:
+        ieimgval[5] = value;
+        document.getElementById('iefiltex6').innerHTML = ieimgval[5];
+    break;
+    case 6:
+        ieimgval[6] = value;
+        document.getElementById('iefiltex7').innerHTML = ieimgval[6];
+    break;
+    case 7:
+        ieimgval[7] = value;
+        document.getElementById('iefiltex8').innerHTML = ieimgval[7];
+    break;
+    case 8:
+        ieimgval[8] = value;
+        document.getElementById('iefiltex9').innerHTML = ieimgval[8];
+    break;
+    }
+    iemainimg.filter = "grayscale("+ieimgval[0]+"%) sepia("+ieimgval[1]+"%) saturate("+ieimgval[2]+"%) hue-rotate("+ieimgval[3]+"deg) invert("+ieimgval[4]+"%) opacity("+ieimgval[5]+"%) brightness("+ieimgval[6]+"%) contrast("+ieimgval[7]+"%) blur("+ieimgval[8]+"px)";
 }
 var iefilter ="";
 function changefil(value){
-	switch(value){
-	case 'Grayscale':
-		ifsetminatt(0);
-		ifsetmaxatt(100);
-		iefilter = 0;
-		ieinprange.value = ieimgval[0];
-	break;
-	case 'Sepia':
-		ifsetminatt(0);
-		ifsetmaxatt(100);
-		iefilter = 1;
-		ieinprange.value = ieimgval[1];
-	break;
-	case 'Saturate':
-		ifsetminatt(0);
-		ifsetmaxatt(200);
-		iefilter = 2;
-		ieinprange.value = ieimgval[2];
-	break;
-	case 'Hue rotate':
-		ifsetminatt(0);
-		ifsetmaxatt(360);
-		iefilter = 3;
-		ieinprange.value = ieimgval[3];
-	break;
-	case 'Invert':
-		ifsetminatt(0);
-		ifsetmaxatt(100);
-		iefilter = 4;
-		ieinprange.value = ieimgval[4];
-		break;
-	case 'Opacity':
-		ifsetminatt(0);
-		ifsetmaxatt(100);
-		iefilter = 5;
-		ieinprange.value = ieimgval[5];
-	break;
-	case 'Brightness':
-		ifsetminatt(0);
-		ifsetmaxatt(300);
-		iefilter = 6;
-		ieinprange.value = ieimgval[6];
-	break;
-	case 'Contrast':
-		ifsetminatt(50);
-		ifsetmaxatt(200);
-		iefilter = 7;
-		ieinprange.value = ieimgval[7];
-	break;
-	case 'Blur':
-		ifsetminatt(0);
-		ifsetmaxatt(10);
-		iefilter = 8;
-		ieinprange.value = ieimgval[8];
-	break;
-	}
+    switch(value){
+    case 'Grayscale':
+        ifsetminatt(0);
+        ifsetmaxatt(100);
+        iefilter = 0;
+        ieinprange.value = ieimgval[0];
+    break;
+    case 'Sepia':
+        ifsetminatt(0);
+        ifsetmaxatt(100);
+        iefilter = 1;
+        ieinprange.value = ieimgval[1];
+    break;
+    case 'Saturate':
+        ifsetminatt(0);
+        ifsetmaxatt(200);
+        iefilter = 2;
+        ieinprange.value = ieimgval[2];
+    break;
+    case 'Hue rotate':
+        ifsetminatt(0);
+        ifsetmaxatt(360);
+        iefilter = 3;
+        ieinprange.value = ieimgval[3];
+    break;
+    case 'Invert':
+        ifsetminatt(0);
+        ifsetmaxatt(100);
+        iefilter = 4;
+        ieinprange.value = ieimgval[4];
+        break;
+    case 'Opacity':
+        ifsetminatt(0);
+        ifsetmaxatt(100);
+        iefilter = 5;
+        ieinprange.value = ieimgval[5];
+    break;
+    case 'Brightness':
+        ifsetminatt(0);
+        ifsetmaxatt(300);
+        iefilter = 6;
+        ieinprange.value = ieimgval[6];
+    break;
+    case 'Contrast':
+        ifsetminatt(50);
+        ifsetmaxatt(200);
+        iefilter = 7;
+        ieinprange.value = ieimgval[7];
+    break;
+    case 'Blur':
+        ifsetminatt(0);
+        ifsetmaxatt(10);
+        iefilter = 8;
+        ieinprange.value = ieimgval[8];
+    break;
+    }
 }
 function ifsetminatt(min){
-	return ieinprange.setAttribute('min', min);
+    return ieinprange.setAttribute('min', min);
 }
 function ifsetmaxatt(max){
-	return ieinprange.setAttribute('max', max);
+    return ieinprange.setAttribute('max', max);
 }
 function borradcli(){
-	ieimgbr.display = "block";
-	ieimgb.display = "none";
-	ieimgsld.display = "none";
-	ieimgrot.display = "none";
+    ieimgbr.display = "block";
+    ieimgb.display = "none";
+    ieimgsld.display = "none";
+    ieimgrot.display = "none";
 }
 function bradius(bvalue){
-	iemainimg.borderRadius = bvalue+"%";
+    iemainimg.borderRadius = bvalue+"%";
 }
 
 
 function boriecli(){
-	ieimgbr.display = "none";
-	ieimgb.display = "block";
-	ieimgsld.display = "none";
-	ieimgrot.display = "none";
+    ieimgbr.display = "none";
+    ieimgb.display = "block";
+    ieimgsld.display = "none";
+    ieimgrot.display = "none";
 }
 var peborder = '000';
 var peborderstyle = 'solid';
 function ieeborder(value){
-	iemainimg.border = value+"px solid #"+peborder;
-	iemainimg.borderStyle = peborderstyle;
+    iemainimg.border = value+"px solid #"+peborder;
+    iemainimg.borderStyle = peborderstyle;
 }
 function borroti(){
-	ieimgbr.display = "none";
-	ieimgb.display = "none";
-	ieimgsld.display = "none";
-	ieimgrot.display = "block";
+    ieimgbr.display = "none";
+    ieimgb.display = "none";
+    ieimgsld.display = "none";
+    ieimgrot.display = "block";
 }
 function ieroate(value){
-	iemainimg.transform = "rotate("+value+"deg)";
+    iemainimg.transform = "rotate("+value+"deg)";
 }
 function reset(){
-	iemainimg.filter = "grayscale("+iedefval[0]+"%) sepia("+iedefval[1]+"%) saturate("+iedefval[2]+"%) hue-rotate("+iedefval[3]+"deg) invert("+iedefval[4]+"%) opacity("+iedefval[5]+"%) brightness("+iedefval[6]+"%) contrast("+iedefval[7]+"%) blur("+iedefval[8]+"px)";
-	for(i=0;i<9;i++){ 
-		ieimgval[i] = iedefval[i];
-		document.getElementById('iefiltex'+(i+1)).innerHTML = ieimgval[i];
-		document.getElementById('baRadius').value = 0;
-		iemainimg.border = "0";
-		iemainimg.borderRadius = 0;
-		iemainimg.transform = 'rotate(0deg)';
-		document.getElementById('borderplus').value = 0;
-		document.getElementById('imgrotate').value = 0;
-	}
+    iemainimg.filter = "grayscale("+iedefval[0]+"%) sepia("+iedefval[1]+"%) saturate("+iedefval[2]+"%) hue-rotate("+iedefval[3]+"deg) invert("+iedefval[4]+"%) opacity("+iedefval[5]+"%) brightness("+iedefval[6]+"%) contrast("+iedefval[7]+"%) blur("+iedefval[8]+"px)";
+    for(i=0;i<9;i++){ 
+        ieimgval[i] = iedefval[i];
+        document.getElementById('iefiltex'+(i+1)).innerHTML = ieimgval[i];
+        document.getElementById('baRadius').value = 0;
+        iemainimg.border = "0";
+        iemainimg.borderRadius = 0;
+        iemainimg.transform = 'rotate(0deg)';
+        document.getElementById('borderplus').value = 0;
+        document.getElementById('imgrotate').value = 0;
+    }
 }
 var idkcef = 0;
 function iechagim(){
@@ -1139,7 +1130,7 @@ function iechagim(){
     reset();
 }
 function cphotoeditor(){
-	document.getElementById('photoeditor').style.width = "0";
+    document.getElementById('photoeditor').style.width = "0";
 }
 
 
@@ -1192,6 +1183,9 @@ function seticosize(appsize){
             document.getElementById('aptxt'+i).style.fontSize = "20px";
         }
     }
+    else{
+        alert("Something went wrong");
+    }
 }
 function mobileoff(){
     var conf = confirm("Are you Sure?");
@@ -1214,13 +1208,6 @@ function closesettings(){
 }
 
 
-/*
-Seems like you are taking this lightly
-or didn't you read the warning above in the code
-there is danger ahead⚠
-
-DONT SCROLL;
-*/
 
 
 
@@ -1404,9 +1391,6 @@ function closeterminal(){
    }
 
 
-/*
-So you have decided to move benath the code😑
-*/
 
 
 
@@ -1597,7 +1581,7 @@ function themcolo(themecolornamez){
         document.getElementById('musicbu'+m).style.border = "2px solid #"+themecolorname;
     }
     for(ie=0;ie<=5;ie++){
-    	document.getElementById('iebtn'+ie).style.backgroundColor = "#"+themecolorname;
+        document.getElementById('iebtn'+ie).style.backgroundColor = "#"+themecolorname;
     }
     for(vid=0;vid<=youtubevideos.length-1;vid++){
         document.getElementById('videoitem'+vid).style.backgroundColor = "#"+themecolorname
@@ -1608,12 +1592,6 @@ function cthemes(){
 }
 
 
-/*
-⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠
-
-Are this warning signs a joke???🙄😑
-*/
-
 
 
 //Unit Converter
@@ -1621,67 +1599,67 @@ function unitconverter(){
     document.getElementById('unitconveter').style.width = "100%";
 }
 var ucentimeter = document.getElementById('inpcentimeter');
-	var umeter = document.getElementById('inpmeter');
-	var ukilometer = document.getElementById('inpkilometer');
-	var uinch = document.getElementById('inpinch');
-	var ufoot = document.getElementById('inpfoot');
-	var uyard = document.getElementById('inpyard');
-	var umile = document.getElementById('inpmile');
+    var umeter = document.getElementById('inpmeter');
+    var ukilometer = document.getElementById('inpkilometer');
+    var uinch = document.getElementById('inpinch');
+    var ufoot = document.getElementById('inpfoot');
+    var uyard = document.getElementById('inpyard');
+    var umile = document.getElementById('inpmile');
 function uccentimeter(cm){
-	umeter.value = cm/100;
-	ukilometer.value = cm/100000;
-	uinch.value = cm*0.39370;
-	ufoot.value = cm*0.032808;
-	uyard.value = cm*0.010936;
-	umile.value = cm*0.0000062137;
+    umeter.value = cm/100;
+    ukilometer.value = cm/100000;
+    uinch.value = cm*0.39370;
+    ufoot.value = cm*0.032808;
+    uyard.value = cm*0.010936;
+    umile.value = cm*0.0000062137;
 }
 function ucmeter(m){
-	ucentimeter.value = m/0.01;
-	ukilometer.value = m/1000;
-	uinch.value = m*39.370;
-	ufoot.value = m*3.2808;
-	uyard.value = m*1.0936;
-	umile.value = m*0.00062137;
+    ucentimeter.value = m/0.01;
+    ukilometer.value = m/1000;
+    uinch.value = m*39.370;
+    ufoot.value = m*3.2808;
+    uyard.value = m*1.0936;
+    umile.value = m*0.00062137;
 }
 function uckilometer(km){
-	ucentimeter.value = km*100000;
-	umeter.value = km*1000;
-	uinch.value = km*39370;
-	ufoot.value = km*3280.8;
-	uyard.value = km*1093.6;
-	umile.value = km*0.62137;
+    ucentimeter.value = km*100000;
+    umeter.value = km*1000;
+    uinch.value = km*39370;
+    ufoot.value = km*3280.8;
+    uyard.value = km*1093.6;
+    umile.value = km*0.62137;
 }
 function ucinch(inch){
-	ucentimeter.value = inch/0.39370;
-	umeter.value = inch/39.370;
-	ukilometer.value = inch/39370;
-	ufoot.value = inch*0.83333;
-	uyard.value = inch*0.027778;
-	umile.value = inch*0.000015783;
+    ucentimeter.value = inch/0.39370;
+    umeter.value = inch/39.370;
+    ukilometer.value = inch/39370;
+    ufoot.value = inch*0.83333;
+    uyard.value = inch*0.027778;
+    umile.value = inch*0.000015783;
 }
 function ucfoot(foot){
-	ucentimeter.value = foot/0.032808;
-	umeter.value = foot/3.2808;
-	ukilometer.value = ft/3280.8;
-	uinch.value = foot*12;
-	uyard.value = foot*0.33333;
-	umile.value = foot*0.00018939;
+    ucentimeter.value = foot/0.032808;
+    umeter.value = foot/3.2808;
+    ukilometer.value = ft/3280.8;
+    uinch.value = foot*12;
+    uyard.value = foot*0.33333;
+    umile.value = foot*0.00018939;
 }
 function ucyard(yard){
-	ucentimeter.value = yard/0.010936;;
-	umeter.value = yard/1.0936;
-	ukilometer.value = yard/1093.6;
-	uinch.value = yard*36;
-	ufoot.value = yard*3;
-	umile.value = yard*0.00056818;
+    ucentimeter.value = yard/0.010936;;
+    umeter.value = yard/1.0936;
+    ukilometer.value = yard/1093.6;
+    uinch.value = yard*36;
+    ufoot.value = yard*3;
+    umile.value = yard*0.00056818;
 }
 function ucmile(mile){
-	ucentimeter.value = mile/0.0000062137;
-	umeter.value = mile/0.00062137;
-	ukilometer.value = mile/0.62137;
-	uinch.value = mile*63360;
-	ufoot.value = mile*5280;
-	uyard.value = mile*1760;
+    ucentimeter.value = mile/0.0000062137;
+    umeter.value = mile/0.00062137;
+    ukilometer.value = mile/0.62137;
+    uinch.value = mile*63360;
+    ufoot.value = mile*5280;
+    uyard.value = mile*1760;
 }
 
 
@@ -1691,24 +1669,24 @@ var fah = document.getElementById('ufahrenheit');
 var cel = document.getElementById('ucelsius');
 var kel = document.getElementById('ukelvin');
 function ucfahrenheit(tempf){
-	cel.value = ((tempf-32)/1.8).toFixed(2);
-	kel.value = (((tempf-32)/1.8)+273.15).toFixed(2);
+    cel.value = ((tempf-32)/1.8).toFixed(2);
+    kel.value = (((tempf-32)/1.8)+273.15).toFixed(2);
 }
 function uccelsius(tempc){
-	fah.value = ((tempc*1.8)+32).toFixed(2);
-	kel.value = ((tempc*1) + 273.15).toFixed(2);
+    fah.value = ((tempc*1.8)+32).toFixed(2);
+    kel.value = ((tempc*1) + 273.15).toFixed(2);
 }
 function uckelvin(tempk){
-	fah.value = (((tempk-273.15)*1.8)+32).toFixed(2);
-	cel.value = (tempk-273.15).toFixed(2);
+    fah.value = (((tempk-273.15)*1.8)+32).toFixed(2);
+    cel.value = (tempk-273.15).toFixed(2);
 }
 
 //Text to Binary
 function convtetb(binctinp){
-	document.getElementById('bincbin').value = "";
-	for(i = 0; i < binctinp.length; i++){
-		document.getElementById('bincbin').value +=binctinp[i].charCodeAt(0).toString(2) + " ";
-	}
+    document.getElementById('bincbin').value = "";
+    for(i = 0; i < binctinp.length; i++){
+        document.getElementById('bincbin').value +=binctinp[i].charCodeAt(0).toString(2) + " ";
+    }
 }
 
 function cunitconverter(){
@@ -1716,11 +1694,6 @@ function cunitconverter(){
 }
 
 
-/*
-You are almost benath the code
-    *The End is near*
-    *haha*
-*/
 
 
 //Videos
